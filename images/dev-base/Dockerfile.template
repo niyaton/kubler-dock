@@ -1,0 +1,9 @@
+FROM ${IMAGE_PARENT}
+LABEL maintainer ${MAINTAINER}
+
+ADD rootfs.tar /
+
+ADD setup-environment.zsh /root/setup-environment.zsh
+RUN zsh /root/setup-environment.zsh
+
+CMD ["/bin/zsh"]
